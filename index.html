@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { 
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 70px;
+            margin: 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form__group {
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .form__field {
+            font-size: 1.3rem;
+            border: none;
+            border-bottom: 2px solid beige; /* Single underline */
+            background: transparent;
+            color: white;
+            font-weight: 700;
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        .form__field::placeholder {
+            color: white;
+        }
+
+        .form__field:focus {
+            border-bottom-color: red; /* Change underline color on focus */
+            outline: none;
+        }
+    </style>
+    <title>My Machine Diary</title>
+</head>
+<body>
+    <div>
+        <h1>My Tic-Tac-Toe</h1>
+        <div class="form__group">
+            <input type="text" class="form__field" name="name" id="name" placeholder="Enter your name" />
+            <button class="button-50" style="margin-left: 5%;" onclick="redirectToGame()">Continue</button>
+        </div>
+    </div>
+    <script>
+        function redirectToGame() {
+            const nameInput = document.getElementById('name').value.trim();
+            const name = nameInput ? encodeURIComponent(nameInput) : 'Player';
+            window.location.href = `myttt.html?name=${name}`;
+        }
+    </script>
+</body>
+</html>

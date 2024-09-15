@@ -1,0 +1,185 @@
+table {
+  background-color: white;
+  height: 80%;
+  margin-top: 5%;
+  width : 620px;
+}
+td {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  font-size: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+canvas{
+  border:0px solid white;
+}
+
+body {
+  color: white;
+}
+
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 80px;
+  box-sizing: border-box;
+
+  margin-top: 1%;
+}
+
+.button-cover {
+  height: 100px;
+  margin: 20px;
+  background-color: #fff;
+  box-shadow: 0 10px 20px -8px #c5d6d6;
+  border-radius: 4px;
+}
+
+.button-cover:before {
+  counter-increment: button-counter;
+  content: counter(button-counter);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #d7e3e3;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+}
+
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  margin: -20px auto 0 auto;
+  overflow: hidden;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #ebf7fc;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+#button-3 .knobs:before {
+  content: "O";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: #03a9f4;
+  border-radius: 50%;
+  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-3 .checkbox:active + .knobs:before {
+  width: 46px;
+  border-radius: 100px;
+}
+
+#button-3 .checkbox:checked:active + .knobs:before {
+  margin-left: -26px;
+}
+
+#button-3 .checkbox:checked + .knobs:before {
+  content: "X";
+  left: 42px;
+  background-color: #b536f4;
+}
+
+#button-3 .checkbox:checked ~ .layer {
+  background-color: #f9ebfc;
+}
+
+.button-50 {
+  appearance: button;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  box-shadow: #000000 4px 4px 0 0, #ffffff 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-50:focus {
+  text-decoration: none;
+}
+
+.button-50:hover {
+  text-decoration: none;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.button-50:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
+  }
+}

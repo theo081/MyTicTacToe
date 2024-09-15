@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="functional.js" defer></script>
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+    
+  </head>
+  <body bgcolor="black">
+    <center style="display: flex; align-items: center; ">
+      <div  style=" text-align: center; padding:0% 2%;">
+        <h1>Laboratory</h1>
+
+        <button class="button-50" role="button" onclick="createAI();">
+          Create AI
+        </button>
+
+       
+
+        <h3>AI Trainer : <span id="user"> Player </span></h3>
+
+        <h3>Intelligence : <span id="ai"> - </span></h3>
+
+        <button class="button-50" role="button" onclick="loadAI();">
+          Personal AI
+        </button>
+        
+
+        <h1>Personal AI</h1>
+
+        <h3>Experience: <span id="exp"> - </span></h3>
+
+        <button class="button-50" role="button" onclick="challenge();">
+          Challenge
+        </button>
+        <br />
+        <button class="button-50" role="button" onclick="emulateData();">
+          Emulate AI
+        </button>
+        <br />
+        <button class="button-50" role="button" onclick="transferData();">
+          Transfer Data
+        </button>
+        <br />
+        <button class="button-50" role="button" onclick="deleteAI();">
+          Remove AI
+        </button>
+
+        <h1>Home Page</h1>
+
+        <button class="button-50" role="button" onclick="backPage();">Go Back</button>
+      </div>
+
+      <center  style="padding:0% 8%;">
+        <table>
+          <tr>
+            <td class="grid" onclick="action(this)"></td>
+            <td class="grid" onclick="action(this)"></td>
+            <td class="grid" onclick="action(this)"></td>
+          </tr>
+          <tr>
+            <td class="grid" onclick="action(this)"></td>
+            <td class="grid" onclick="action(this)"></td>
+            <td class="grid" onclick="action(this)"></td>
+          </tr>
+          <tr>
+            <td class="grid" onclick="action(this)"></td>
+            <td class="grid" onclick="action(this)"></td>
+            <td class="grid" onclick="action(this)"></td>
+          </tr>
+        </table>
+  
+        <div style="display: flex; width: 600px; justify-content: space-around">
+          <div style="color:grey; margin-top: 2%; width: 200px; font-size: 12px;">
+            &copy; 2024 Theo Myo<br/>
+              Personal Project<br/>
+              All Rights Reserved
+          </div>
+  
+          <button
+            style="margin-top: 2%; padding: 15px; width: 200px; cursor: pointer; border-radius: 5%;"
+            onclick="start();"
+            id="start"
+          >
+            Start Game
+          </button>
+  
+          <div style="color:white; width: 120px; text-align: right; padding-top: 15px; margin-top: 2%; ">
+           I WILL BE &nbsp;&nbsp;
+          </div>
+  
+          <div class="toggle-button-cover" >
+            <div id="button-3" class="button r">
+              <input class="checkbox" type="checkbox"  />
+              <div class="knobs"></div>
+              <div class="layer"></div>
+            </div>
+          </div>
+        </div>
+      </center>
+
+      <div id="charts" >
+        <div><canvas id="chart0"></canvas></div>
+        <div><canvas id="chart1"></canvas></div>
+        <div><canvas id="chart2"></canvas></div>
+        <div><canvas id="chart3"></canvas></div>
+        <div><canvas id="chart4"></canvas></div>
+      </div>
+    </center>
+
+    
+  </body>
+</html>
